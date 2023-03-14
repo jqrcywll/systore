@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>店铺管理系统</title>
+    <link rel="stylesheet" type="text/css" href="main.css" />
+    <link rel="stylesheet" type="text/css" href="stock_detail.css" />
+</head>
+
+<body>
+    <header>
+        <h1>SMS</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="index.html">首页</a></li>
+            <li><a href="bill.html">收银</a></li>
+            <li><a href="stock.html">库存</a></li>
+            <li><a href="#">统计</a></li>
+        </ul>
+    </nav>
+    <div id="tableContainer">
+        <div id="tableRow">
+            <section>
+                <table>
+                    <tbody>
+                        <tr>
+                            <td rowSpan="2" colSpan="2"><img src="1.png" alt="样本" /></td>
+                            <td>商品名</td>
+                            <td>条码</td>
+                            <td>数量</td>
+                            <td>进货价</td>
+                            <td>零售价</td>
+                        </tr>
+                        <tr>
+                            <td>得力思达6600ES中性笔(支)</td>
+                            <td>620032148282</td>
+                            <td>491</td>
+                            <td>1.70</td>
+                            <td>2.50</td>
+                        </tr>
+                        <tr>
+                            <td>ID</td>
+                            <td>货架号</td>
+                            <td>品牌</td>
+                            <td>一级品类</td>
+                            <td>二级品类</td>
+                            <td>规格</td>
+                            <td>关键词</td>
+                        </tr>
+                        <tr>
+                            <td>0</td>
+                            <td>A3</td>
+                            <td>得力思达</td>
+                            <td>文具</td>
+                            <td>笔</td>
+                            <td>0.5mm</td>
+                            <td>得力6600ES中性笔0.5mm子弹头(支)</td>
+                        </tr>
+                        <tr>
+                            <td>入库时间</td>
+                            <td>是否上架</td>
+                            <td>最后上架时间</td>
+                            <td colSpan="4"></td>
+                        </tr>
+                        <tr>
+                            <td>2023-03-09 18:53:00</td>
+                            <td>√</td>
+                            <td>2023-03-09 18:53:00</td>
+                            <td colSpan="4"></td>
+                        </tr>
+                        <tr>
+                            <td>供应商</td>
+                            <td>供应商电话</td>
+                            <td>供应商地址</td>
+                            <td colSpan="4"></td>
+                        </tr>
+                        <tr>
+                            <td>福山得力</td>
+                            <td>18515070522</td>
+                            <td>三站批发市场</td>
+                            <td colSpan="4"></td>
+                        </tr>
+                        <tr>
+                            <td colSpan="6"></td>
+                            <td>是否归档</td>
+                        </tr>
+                        <tr>
+                            <td colSpan="6"></td>
+                            <td>×</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+            <aside>
+                <ul>
+                    <li><a href="stock.html">查询库存</a></li>
+                    <li><a href="stock_add.html">新增库存</a></li>
+                </ul>
+            </aside>
+        </div>
+    </div>
+
+    <div><p><a href="stock.html">删除</a></p></div>
+
+    <footer>
+        <p>That all glory is fleeting.</p>
+    </footer>
+
+
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+    <script src="stock_detail.js"></script>
+</body>
+
+
+
+</html>

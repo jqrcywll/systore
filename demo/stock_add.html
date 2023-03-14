@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>店铺管理系统</title>
+    <link rel="stylesheet" type="text/css" href="main.css" />
+    <link rel="stylesheet" type="text/css" href="stock_add.css" />
+</head>
+
+<body>
+    <header>
+        <h1>SMS</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="index.html">首页</a></li>
+            <li><a href="bill.html">收银</a></li>
+            <li><a href="stock.html">库存</a></li>
+            <li><a href="#">统计</a></li>
+        </ul>
+    </nav>
+
+    <div id="fill_word">
+        <ul>
+            <li><a href="#" onclick="fillWord(this)">A1</a></li>
+            <li><a href="#" onclick="fillWord(this)">A2</a></li>
+            <li><a href="#" onclick="fillWord(this)">A3</a></li>
+            <li><a href="#" onclick="fillWord(this)">钢笔</a></li>
+            <li><a href="#" onclick="fillWord(this)">水彩笔</a></li>
+            <li><a href="#" onclick="fillWord(this)">明信片</a></li>
+        </ul>
+    </div>
+
+    <div id="tableContainer">
+        <div id="tableRow">
+            <section>
+                <form action="stock.html" method="POST">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>序号</th>
+                                <th>条形码</th>
+                                <th>商品名</th>
+                                <th>参考图</th>
+                                <th>品牌</th>
+                                <th>数量</th>
+                                <th>进货价</th>
+                                <th>零售价</th>
+                                <th>品类</th>
+                                <th>货架号</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr id="template" style="display: none">
+                                <td>0</td>
+                                <td><input type="text" name="barcode" readonly /></td>
+                                <td><input type="text" name="name" readonly /></td>
+                                <td><img src="" alt="pic" name="pic" /></td>
+                                <td><input type="text" name="brand" readonly /></td>
+                                <td><input type="number" name="amount" value="1" min="1" /></td>
+                                <td><input type="number" name="input_price" value="2.00" min="0.00"
+                                        step="0.50" /></td>
+                                <td><input type="number" name="sale_price" value="2.00" min="0.00" step="0.50" />
+                                </td>
+                                <td><input class="fill_word_position" type="checkbox"><input type="text" name="class_1" readonly /></td>
+                                <td><input class="fill_word_position" type="checkbox"><input type="text" name="warehouse" readonly /></td>
+                                <td><a href="#" onclick="removeThisLine(this)">X</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <input type="submit" value="提交" /><p>总计<span id="count">0</span>条</p>
+                </form>
+            </section>
+            <aside>
+                <ul>
+                    <li><a href="stock.html">查询库存</a></li>
+                    <li><a href="stock_add.html">新增库存</a></li>
+                </ul>
+            </aside>
+        </div>
+    </div>
+
+    <footer>
+        <p>That all glory is fleeting.</p>
+    </footer>
+
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+    <script src="stock_add.js"></script>
+</body>
+
+
+
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>店铺管理系统</title>
+    <link rel="stylesheet" type="text/css" href="main.css" />
+    <link rel="stylesheet" type="text/css" href="bill_detail.css" />
+</head>
+
+<body>
+    <header>
+        <h1>SMS</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="index.html">首页</a></li>
+            <li><a href="bill.html">收银</a></li>
+            <li><a href="stock.html">库存</a></li>
+            <li><a href="#">统计</a></li>
+        </ul>
+    </nav>
+    <div id="tableContainer">
+        <div id="tableRow">
+            <section>
+                <table>
+                    <thead>
+                        <tr>
+                            <td rowSpan="2" colSpan="2">图片</td>
+                            <td>商品列表</td>
+                            <td>类别</td>
+                            <td>条形码</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>定价策略</td>
+                            <td>售价</td>
+                            <td>数量</td>
+                        </tr>
+                        <tr>
+                            <td>客户类型</td>
+                            <td>供应商</td>
+                            <td>实付</td>
+                            <td>应付</td>
+                            <td>备注</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+            <aside>
+                <ul>
+                    <li>自定义1</li>
+                    <li>自定义2</li>
+                    <li>自定义3</li>
+                    <li>自定义4</li>
+                </ul>
+            </aside>
+        </div>
+    </div>
+
+    <footer>
+        <p>That all glory is fleeting.</p>
+    </footer>
+
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+    <script src="bill_detail.js"></script>
+</body>
+
+
+
+</html>

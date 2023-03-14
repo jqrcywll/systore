@@ -1,0 +1,42 @@
+body {
+    background-color: white;
+}
+
+header {
+    background-color: green;
+    height: 40px;
+}
+
+nav {
+    background-color: green;
+    height: 20px;
+}
+
+nav ul {
+    list-style-type: none;
+}
+
+nav ul li {
+    display: inline;
+}
+
+div#tableContainer {
+    display: table;
+}
+
+div#tableRow {
+    display: table-row;
+}
+
+section {
+    display: table-cell;
+    background-color: bisque;
+}
+
+aside {
+    display: table-cell;
+}
+
+footer {
+    background-color: green;
+}
