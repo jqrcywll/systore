@@ -1,0 +1,47 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>店铺管理系统</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'sms/main.css' %}" />
+</head>
+
+<body>
+    <header>
+        <h1>SMS</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="{% url 'sms:index' %}">首页</a></li>
+            <li><a href="{% url 'sms:bill' %}">收银</a></li>
+            <li><a href="{% url 'sms:stock' %}">库存</a></li>
+            <li><a href="#">统计</a></li>
+        </ul>
+    </nav>
+    <div id="tableContainer">
+        <div id="tableRow">
+            <section>
+                {% block content %}
+                {% endblock %}
+            </section>
+            <aside>
+                {% block aside %}
+                {% endblock %}
+            </aside>
+        </div>
+    </div>
+
+    <footer>
+        <p>That all glory is fleeting.</p>
+    </footer>
+
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+</body>
+
+
+
+</html>

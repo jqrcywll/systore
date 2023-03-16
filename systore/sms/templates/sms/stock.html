@@ -1,0 +1,53 @@
+{% extends 'sms/base.html' %}
+
+{% block content %}
+<table>
+    <thead>
+        <tr>
+            <th>序号</th>
+            <th>商品名</th>
+            <th>条形码</th>
+            <th>数量</th>
+            <th>进货价</th>
+            <th>零售价</th>
+            <th>货架号</th>
+            <th>品牌</th>
+            <th>二级品类</th>
+            <th>规格</th>
+            <th>最近上架时间</th>
+            <th>是否上架</th>
+            <th>是否归档</th>
+            <th>操作</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for stock in stocks %}
+        <tr>
+            <td>{{ stock.id }}</td>
+            <td>{{ stock.name }}</td>
+            <td>{{ stock.barcode }}</td>
+            <td>{{ stock.num }}</td>
+            <td>{{ stock.input_price }}</td>
+            <td>{{ stock.sale_price }}</td>
+            <td>{{ stock.warehouse_id }}</td>
+            <td>{{ stock.trade_mark }}</td>
+            <td>{{ stock.class1_id }}</td>
+            <td>{{ stock.spec }}</td>
+            <td>{{ stock.time_created|date:'M d, Y H:i' }}</td>
+            <td>√</td>
+            <td></td>
+            <td><a href="stock_detail.html">详情</a></td>
+        </tr>
+        {% empty %}
+        <li>No stocks.</li>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
+
+{% block aside %}
+<ul>
+    <li><a href="stock.html">查询</a></li>
+    <li><a href="stock_add.html">新增</a></li>
+</ul>
+{% endblock %}
