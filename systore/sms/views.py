@@ -1,23 +1,31 @@
-from django.shortcuts import render
+from django.shortcuts import render, HttpResponseRedirect
+from django.urls import reverse
+
+from .models import Stock
+from .forms import StockForm
+
 
 def index(request):
     return render(request, 'sms/index.html')
 
+
 def stock(request):
-    context = {
-        'id': 100,
-        'name': "abc",
-        'barcode': '131313131313',
-        'num': 17,
-        'input_price': 3.14,
-        'sale_price': 618.00,
-        'warehouse_id': 3,
-        'trade_mark': '晨光',
-        'class1_id': 32,
-        'spec': '0.7mm',
-        'time_created': '2022-07-30 14:03:28',
-    }
-    return render(request, 'sms/stock.html')
+    stocks = Stock.objects.order_by('time_created')
+    context = {'stocks': stocks}
+    return render(request, 'sms/stock.html', context)
+
+
+def stock_add(request):
+    if request.method != 'POST':
+        form = StockForm()
+    else:
+        form = StockForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return HttpResponseRedirect(reverse('sms:index'))
+    context = {'form': form}
+    return render(request, 'sms/stock_add.html', context)
+
 
 def bill(request):
     return render(request, 'sms/bill.html')

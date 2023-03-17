@@ -1,4 +1,4 @@
-{% extends 'sms/base.html' %}
+{% extends 'sms/base_stock.html' %}
 
 {% block content %}
 <table>
@@ -38,16 +38,7 @@
             <td></td>
             <td><a href="stock_detail.html">详情</a></td>
         </tr>
-        {% empty %}
-        <li>No stocks.</li>
         {% endfor %}
     </tbody>
 </table>
-{% endblock %}
-
-{% block aside %}
-<ul>
-    <li><a href="stock.html">查询</a></li>
-    <li><a href="stock_add.html">新增</a></li>
-</ul>
 {% endblock %}
