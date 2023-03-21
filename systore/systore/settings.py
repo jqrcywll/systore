@@ -68,6 +68,12 @@ TEMPLATES = [
     },
 ]
 
+CACHES = {
+    'default': {
+        'BACKEND': 'django.core.cache.backends.dummy.DummyCache',
+    }
+}
+
 WSGI_APPLICATION = 'systore.wsgi.application'
 
 
@@ -77,9 +83,9 @@ WSGI_APPLICATION = 'systore.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'postgres',
-        'USER': 'postgres',
-        'PASSWORD': '123456',
+        'NAME': 'sms',
+        'USER': 'charles',
+        'PASSWORD': 'w',
         'HOST': '127.0.0.1',
         'PORT': '5432'
     }

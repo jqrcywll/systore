@@ -1,21 +1,10 @@
 {% extends 'sms/base_stock.html' %}
 
 {% block content %}
-<div id="fill_word">
-    <ul>
-        <li><a href="#" onclick="fillWord(this)">A1</a></li>
-        <li><a href="#" onclick="fillWord(this)">A2</a></li>
-        <li><a href="#" onclick="fillWord(this)">A3</a></li>
-        <li><a href="#" onclick="fillWord(this)">钢笔</a></li>
-        <li><a href="#" onclick="fillWord(this)">水彩笔</a></li>
-        <li><a href="#" onclick="fillWord(this)">明信片</a></li>
-    </ul>
-</div>
 
 <form action="{% url 'sms:stockadd' %}" method="POST">
     {% csrf_token %}
-    {{ form.as_p }}
-    <!-- <table>
+    <table>
         <thead>
             <tr>
                 <th>序号</th>
@@ -27,28 +16,28 @@
                 <th>进货价</th>
                 <th>零售价</th>
                 <th>品类</th>
+                <th>规格</th>
                 <th>货架号</th>
                 <th></th>
             </tr>
         </thead>
         <tbody>
-            <tr id="template" style="display: none">
-                <td>0</td>
-                <td><input type="text" name="barcode" readonly /></td>
-                <td><input type="text" name="name" readonly /></td>
-                <td><img src="" alt="pic" name="pic" /></td>
-                <td><input type="text" name="brand" readonly /></td>
-                <td><input type="number" name="amount" value="1" min="1" /></td>
-                <td><input type="number" name="input_price" value="2.00" min="0.00" step="0.50" /></td>
-                <td><input type="number" name="sale_price" value="2.00" min="0.00" step="0.50" />
-                </td>
-                <td><input class="fill_word_position" type="checkbox"><input type="text" name="class_1" readonly /></td>
-                <td><input class="fill_word_position" type="checkbox"><input type="text" name="warehouse" readonly />
-                </td>
-                <td><a href="#" onclick="removeThisLine(this)">X</a></td>
+            <tr id="tpl" style="display: none">
+                <th>0</th>
+                <th>{{ form.barcode }}</th>
+                <th>{{ form.goods_name }}</th>
+                <th><img src="{{ form.pic.value }}" width="60" height="60" /></th>
+                <th>{{ form.trade_mark }}</th>
+                <th>{{ form.num }}{{ field.errors }}</th>
+                <th>{{ form.input_price }}</th>
+                <th>{{ form.sale_price }}</th>
+                <th>{{ form.goods_class }}</th>
+                <th>{{ form.spec }}</th>
+                <th>{{ form.warehouse }}</th>
+                <th>detail</th>
             </tr>
         </tbody>
-    </table> -->
+    </table>
     <button name="submit">提交</button>
     <p>总计<span id="count">0</span>条</p>
 </form>

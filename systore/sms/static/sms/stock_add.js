@@ -1,9 +1,16 @@
 function addOneLine() {
-    var element = document.getElementsByTagName("table")[0];
-    var newLine = document.getElementById("template").cloneNode(true);
+    var newLine;
+    const tbody = document.getElementsByTagName("tbody")[0];
+    var tpl = document.getElementById("tpl");
+    if (!tpl) {
+        newLine = tbody.lastElementChild.cloneNode(true);
+    } else {
+        newLine = tpl.cloneNode(true);
+        tpl.remove();
+    }
     newLine.removeAttribute("id");
     newLine.removeAttribute("style");
-    element.appendChild(newLine);
+    tbody.appendChild(newLine);
     return newLine;
 }
 
@@ -23,7 +30,8 @@ function addStockEvent() {
                     var newLine = addOneLine();
                     newLine.children[0].innerText = (++no).toString();
                     newLine.children[1].firstChild.setAttribute("value", barcode);
-                    newLine.children[2].firstChild.setAttribute("value", "晨光自动笔3mm");
+                    newLine.children[2].firstChild.setAttribute("value", "晨光自动笔");
+                    newLine.children[3].firstChild.setAttribute("src", "https://res-showapi.oss-cn-hangzhou.aliyuncs.com/barcode/20220114/70e06a59-9b47-4e88-b2a3-348c7c940f11.jpg");
                     newLine.children[4].firstChild.setAttribute("value", "晨光");
                     barcode = "";
 
@@ -35,18 +43,6 @@ function addStockEvent() {
         }
         lastInputTime = curInputTime;
     };
-}
-
-function fillWord(that) {
-    var word = that.innerText;
-    var allFillPositions = document.getElementsByClassName("fill_word_position");
-    var pos;
-    for (pos = 0; pos < allFillPositions.length; pos++) {
-        if (allFillPositions[pos].checked) {
-            allFillPositions[pos].nextSibling.setAttribute("value", word);
-            allFillPositions[pos].checked = false;
-        }
-    }
 }
 
 function removeThisLine(that) {
